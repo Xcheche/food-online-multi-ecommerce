@@ -32,9 +32,11 @@
 </head>
 
 <body>
+    <!-- Header -->
+    {% include 'inc/header.html' %}
 	<!--Main Wrapper-->
 	{% block content %}{% endblock %}
-    {% include 'inc/main.html' %}
+   {% include 'inc/footer.html' %}
 
 	<!-- Modal Popup End -->
 	<script src="{% static 'js/scripts.js' %}"></script>

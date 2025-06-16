@@ -52,6 +52,10 @@ class  User(BaseModel,AbstractBaseUser):
         "Does the user have permissions to view the app 'app_label'?"
         # Simplest possible answer: Yes, always
         return True
+    
+    
+    
+#User profile model    
 class UserProfile(BaseModel):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile',blank=True, null=True)
     address_line1 = models.CharField(max_length=255, blank=True, null=True)

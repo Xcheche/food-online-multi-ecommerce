@@ -1,7 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+
+from users.forms import UserForm
+from users.models import User
 
 # Create your views here.
 
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'users/home.html')
+
+
+def register_user(request):
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            # Save the user data to the database
+            user = form.save(commit=False)
+            user_role = User.CUSTOMER  # Default role
+            
+            user.save()
+            # Redirect to a success page or render a success message
+            return redirect('home')  # Assuming you have a URL named 'home'
+    else:
+        form = UserForm()
+    context = {
+        'form': form
+    }
+    return render(request,'users/register_user.html', context)

@@ -1,8 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
+
+{% block content %}
 
 <div class="wrapper">
     <!-- Header Start -->
-    {% include 'inc/header.html' %}
+   
     <!-- Header End -->
     <!-- Main Section Start -->
     <div class="main-section">
@@ -239,7 +242,8 @@
         <!-- Home Pages Elements End  -->
     </div>
     <!-- Main Section End -->
-    <!-- Footer Start -->
-    {% include 'inc/footer.html' %}
-    <!-- Footer End -->
+ 
 </div>
+
+
+{% endblock %}
