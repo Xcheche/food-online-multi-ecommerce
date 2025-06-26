@@ -99,7 +99,7 @@
                       </div>
                     </li>
                     <li>
-                      <!--Checking for field errors-->
+                      <!--Checking for field errors coming from form validation is_valid-->
                       <ul>
                         {% for field in form %}
                          {% if field.errors %}
@@ -111,7 +111,7 @@
                       </ul>
                       <!--End of checking for field errors-->
 
-                      <!--Showing Non field errors-->
+                      <!--Showing Non field errors coming from forms.py-->
                       <li style="color: darkred;">{{form.non_field_errors}}</li>
                       <!--End of showing non field errors-->
                       <div class="row">
