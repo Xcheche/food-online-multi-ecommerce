@@ -99,6 +99,21 @@
                       </div>
                     </li>
                     <li>
+                      <!--Checking for field errors-->
+                      <ul>
+                        {% for field in form %}
+                         {% if field.errors %}
+                          {% for error in field.errors %}
+                        <li style="color: red">{{error}}</li>
+                        {% endfor %} 
+                        {% endif %}
+                         {% endfor %}
+                      </ul>
+                      <!--End of checking for field errors-->
+
+                      <!--Showing Non field errors-->
+                      <li style="color: darkred;">{{form.non_field_errors}}</li>
+                      <!--End of showing non field errors-->
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div class="field-holder">
