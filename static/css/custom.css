@@ -1,0 +1,62 @@
+
+@keyframes show-toast{
+    0%{bottom:-100%;}
+    20%{bottom:100px;}
+    80%{bottom:100px;}
+    100%{bottom:-100%;}
+}
+
+.show-notifications{
+    position:fixed;
+    bottom:100%;
+    right:20px;
+    animation-name: show-toast;
+    animation-duration:8s;
+
+}
+
+/* ----------------second-------------------------------- */
+
+/* @keyframes show-toast {
+    0%   { bottom: -150px; }
+    15%  { bottom: 100px; }
+    85%  { bottom: 100px; }
+    100% { bottom: -150px; }
+  }
+  
+  .show-notifications{
+    position: fixed;
+    right: 20px;
+    bottom: -150px;
+    animation: show-toast 6s ease-in-out forwards;
+  }
+   */
+/* -------------------
+Third-----------------------    */
+
+/* @keyframes show-toast {
+    0% {
+      transform: translateY(150%);
+      opacity: 0;
+    }
+    15% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    85% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(150%);
+      opacity: 0;
+    }
+  }
+  
+  .show-notifications {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    animation: show-toast 6s ease-in-out forwards;
+  }
+   */

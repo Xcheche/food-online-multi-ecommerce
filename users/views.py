@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render,redirect
 
 from users.forms import UserForm
@@ -11,6 +12,7 @@ def home(request):
 
 
 def register_user(request):
+    user = User()
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():
@@ -22,8 +24,11 @@ def register_user(request):
             #or use cleaned data and create object to validate so to hash password 
             user.save()
             # Redirect to a success page or render a success message
-            return redirect('home')  # Assuming you have a URL named 'home'
+            messages.success(request, 'User registered successfully!') 
+            return redirect('register_user')  # Assuming you have a URL named 'home'
     else:
+        
+        
         form = UserForm()
     context = {
         'form': form
